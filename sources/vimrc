@@ -1,0 +1,55 @@
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936 
+
+set fdm=marker
+syntax on
+syntax enable
+set cindent
+set tabstop=4             " 设置tab键的宽度
+set shiftwidth=4           " 换行时行间交错使用4个空格
+set backspace=2           " 设置退格键可用
+set ai!                   " 设置自动缩进
+set showmatch            " 设置匹配模式，类似当输入一个左括号时会匹配相应的那个右括号
+"the last CR means one need't to enter manually
+:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+:set tag+=./tags
+:!cscope -Rbq -f ./cs.out
+:cs add ./cs.out
+:set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:cw<CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:cw<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+
+let Tlist_Show_One_File=1  
+let Tlist_Exit_OnlyWindow=1
+
+let g:ctrlp_map = '<c-p>'     "hotkey Ctrl+p open ctrlp plugin
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = '0'       "disable work path mode
+
+set nocp
+filetype plugin on
+let g:miniBufExplMapWindowNavVim = 1   
+let g:miniBufExplMapWindowNavArrows = 1   
+let g:miniBufExplMapCTabSwitchBufs = 1   
+let g:miniBufExplModSelTarget = 1  
+let g:miniBufExplMoreThanOne=0
+let g:NERDTree_title="[NERDTree]"  
+let g:winManagerWindowLayout="NERDTree|TagList"  
+  
+function! NERDTree_Start()  
+    exec 'NERDTree'  
+endfunction  
+  
+function! NERDTree_IsValid()  
+    return 1  
+endfunction  
+  
+nmap wm :WMToggle<CR>
+
+
