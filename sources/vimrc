@@ -51,5 +51,6 @@ function! NERDTree_IsValid()
 endfunction  
   
 nmap wm :WMToggle<CR>
+nmap nd :NERDTree<CR>
 
 
