@@ -20,3 +20,4 @@ mkdir -p ~/.vim && cp -rf sources/vim/* ~/.vim
 } &
 
 tail -f tmp/install.log
+###############
