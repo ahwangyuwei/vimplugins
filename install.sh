@@ -16,11 +16,10 @@ pwd
 cd ../../
 pwd
 touch ~/.vimrc && cat sources/vimrc  >~/.vimrc    &&
-mkdir -p ~/.vim && cp -rf sources/vim/* ~/.vim
+mkdir -p ~/.vim && cp -rf sources/vim/* ~/.vim &&
+
+rm -rf tmp/c*
 } &
 
 tail -f tmp/install.log
-########
-##dddd####
 
-###3444444#
