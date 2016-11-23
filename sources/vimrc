@@ -1,7 +1,11 @@
+#spcace代替空格
 set ts=4
 set expandtab
 %retab!
 set nu 
+
+＃高亮选中
+set hlsearch
 
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936 
 
