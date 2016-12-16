@@ -1,10 +1,10 @@
-#spcace代替空格
+"spcace代替空格
 set ts=4
 set expandtab
 %retab!
 set nu 
 
-＃高亮选中
+"高亮选中
 set hlsearch
 
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936 
@@ -19,10 +19,10 @@ set backspace=2           " 设置退格键可用
 set ai!                   " 设置自动缩进
 set showmatch            " 设置匹配模式，类似当输入一个左括号时会匹配相应的那个右括号
 "the last CR means one need't to enter manually
-:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-:set tag+=./tags
-:!cscope -Rbq -f ./cs.out
-:cs add ./cs.out
+:silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+:silent set tag+=./tags
+:silent !cscope -Rbq -f ./cs.out
+:silent cs add ./cs.out
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR>
