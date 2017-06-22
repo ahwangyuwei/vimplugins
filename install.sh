@@ -1,8 +1,9 @@
 #!/bin/sh
 echo "Make sure you have sudo priority, then see tmp/install.log ..."
-{
 set -x
 mkdir -p tmp
+
+{
 exec &>tmp/install.log &&
 dir=$(pwd)
 
